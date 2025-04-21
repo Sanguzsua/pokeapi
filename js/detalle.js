@@ -45,25 +45,28 @@ async function mostrarDetalle(id) {
     const app = document.getElementById("app");
     const esFavorito = favoritos.some(pokemon => Number(pokemon.id) === id);
 
+    // Generar el contenido de detalle
     const detalle = `
-    <section class="c-detalle">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png" alt="${data.name}" height="120" width="auto">
-        <p>${data.name}</p>
-        <p>${data.id}</p>
-        <p>${tipoPoke}</p>
-        <p>Altura: ${data.height / 10} m / Peso: ${data.weight / 10} km</p>
-        <p>hp: ${data.stats[0].base_stat}</p>
-        <p>Velocidad: ${data.stats[5].base_stat}</p>
-        <p>Ataque: ${data.stats[1].base_stat} Defensa: ${data.stats[2].base_stat}</p>
-        <p>Ataque Especial: ${data.stats[3].base_stat} Defensa Especial: ${data.stats[4].base_stat}</p>
+        <section class="c-detalle">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png" alt="${data.name}" height="120" width="auto">
+            <p>${data.name}</p>
+            <p>${data.id}</p>
+            <p>${tipoPoke}</p>
+            <p>Altura: ${data.height / 10} m / Peso: ${data.weight / 10} kg</p>
+            <p>hp: ${data.stats[0].base_stat}</p>
+            <p>Velocidad: ${data.stats[5].base_stat}</p>
+            <p>Ataque: ${data.stats[1].base_stat} Defensa: ${data.stats[2].base_stat}</p>
+            <p>Ataque Especial: ${data.stats[3].base_stat} Defensa Especial: ${data.stats[4].base_stat}</p>
 
-        <button id="favorito-btn-${id}" onclick="toggleFavorito(${id}, '${data.name}')">
-            <span id="corazon-${id}" class="corazon">${esFavorito ? '❤️' : '🤍'}</span> Favorito
-        </button>
-    </section>
+            <button id="favorito-btn-${id}" onclick="toggleFavorito(${id}, '${data.name}')">
+                <span id="corazon-${id}" class="corazon">${esFavorito ? '❤️' : '🤍'}</span> Favorito
+            </button>
+        </section>
     `;
 
+    // Mostrar el contenido de detalle en el div de la app
     app.innerHTML = detalle;
+
+    // Actualizar el icono de favorito después de mostrar el detalle
     actualizarIconoFavorito(id);
 }
-window.mostrarDetalle = mostrarDetalle;
