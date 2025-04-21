@@ -56,11 +56,12 @@ async function mostrarDetalle(id) {
         <p>Velocidad: ${data.stats[5].base_stat}</p>
         <p>Ataque: ${data.stats[1].base_stat} Defensa: ${data.stats[2].base_stat}</p>
         <p>Ataque Especial: ${data.stats[3].base_stat} Defensa Especial: ${data.stats[4].base_stat}</p>
-</section>
+
+        <button id="favorito-btn-${id}" onclick="toggleFavorito(${id}, '${data.name}')">
+            <span id="corazon-${id}" class="corazon">${esFavorito ? '❤️' : '🤍'}</span> Favorito
+        </button>
+    </section>
     `;
-    
-    app.innerHTML = detalle;const btn = document.getElementById(`favorito-btn-${id}`);
-    btn.addEventListener("click", () => toggleFavorito(id, data.name));
 
     app.innerHTML = detalle;
     actualizarIconoFavorito(id);
