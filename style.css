@@ -39,7 +39,7 @@ button{
 }
 
 .c-nav-item{
-    width: calc(25% - 7.5px);
+    width: calc(20% - 8px);
     background-color: red;
 }
 .c-nav-item:hover{
