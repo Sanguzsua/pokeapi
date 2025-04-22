@@ -65,5 +65,4 @@ async function mostrarDetalle(id) {
 
     app.innerHTML = detalle;
     actualizarIconoFavorito(id);
-    
 }
