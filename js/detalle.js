@@ -1,19 +1,19 @@
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-const toggleFavorito = (id, nombre) => {
+const toggleFavorito = (id, nombre, btnElement) => {
     id = Number(id);
     const esFavorito = favoritos.some(pokemon => Number(pokemon.id) === id);
 
     if (esFavorito) {
         favoritos = favoritos.filter(p => Number(p.id) !== id);
-        document.getElementById(`corazon-${id}`).textContent = '🤍';
+        btnElement.querySelector('.corazon').textContent = '🤍';
     } else {
         favoritos.push({ 
             id, 
             nombre, 
             url: `https://pokeapi.co/api/v2/pokemon/${id}/` 
         });
-        document.getElementById(`corazon-${id}`).textContent = '❤️';
+        btnElement.querySelector('.corazon').textContent = '❤️';
     }
 
     // Guardar favoritos en localStorage
@@ -51,14 +51,14 @@ async function mostrarDetalle(id) {
         <p>${data.name}</p>
         <p>${data.id}</p>
         <p>${tipoPoke}</p>
-        <p>Altura: ${data.height / 10} m / Peso: ${data.weight / 10} km</p>
+        <p>Altura: ${data.height / 10} m / Peso: ${data.weight / 10} kg</p>
         <p>hp: ${data.stats[0].base_stat}</p>
         <p>Velocidad: ${data.stats[5].base_stat}</p>
         <p>Ataque: ${data.stats[1].base_stat} Defensa: ${data.stats[2].base_stat}</p>
         <p>Ataque Especial: ${data.stats[3].base_stat} Defensa Especial: ${data.stats[4].base_stat}</p>
 
-        <button id="favorito-btn-${id}" onclick="toggleFavorito(${id}, '${data.name}')">
-            <span id="corazon-${id}" class="corazon">${esFavorito ? '❤️' : '🤍'}</span> Favorito
+        <button onclick="toggleFavorito(${id}, ${JSON.stringify(data.name)}, this)">
+            <span class="corazon">${esFavorito ? '❤️' : '🤍'}</span> Favorito
         </button>
     </section>
     `;
