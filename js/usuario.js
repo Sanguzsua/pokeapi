@@ -9,6 +9,8 @@ function mostrarusuario() {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 10px; /* Espacio pequeño alrededor */
+        box-sizing: border-box;
       ">
         <!-- Fondo -->
         <div style="
@@ -37,7 +39,7 @@ function mostrarusuario() {
             max-width: 400px;
             font-size: 1em;
           ">
-            <p>Esta app usa una API que ofrece informaciocion de 1025 Pokemones</p>
+            <p>Esta app usa una API que ofrece información de 1025 Pokemones</p>
           </div>
           <p style="font-size: 1em; color: black;">
             GitHub: <a href="https://github.com/Sanguzsua" target="_blank" style="color: black;">@Sanguzsua</a>
@@ -48,15 +50,6 @@ function mostrarusuario() {
           </footer>
         </div>
   
-        <!-- Botones -->
-        <div style="z-index: 1; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; padding: 20px 0;">
-          <button style="background-color: blue; color: white;">Home</button>
-          <button style="background-color: blue; color: white;">Usuario</button>
-          <button style="background-color: blue; color: white;">Aleatorios</button>
-          <button style="background-color: blue; color: white;">Favoritos</button>
-          <button style="background-color: blue; color: white;">Capturados</button>
-        </div>
-      </div>
     `;
   }
   
