@@ -3,8 +3,6 @@ function mostrarusuario() {
     container.innerHTML = `
       <div style="
         position: relative;
-        overflow: hidden;
-        padding: 20px;
         min-height: 100vh;
         font-family: 'Arial', sans-serif;
         text-align: center;
@@ -12,8 +10,9 @@ function mostrarusuario() {
         flex-direction: column;
         justify-content: center;
       ">
+        <!-- Fondo -->
         <div style="
-          position: absolute;
+          position: fixed;
           top: 0;
           left: 0;
           width: 100%;
@@ -22,10 +21,11 @@ function mostrarusuario() {
           background-size: cover;
           background-position: center;
           filter: blur(10px);
-          z-index: 0;
+          z-index: -1;
         "></div>
   
-        <div style="position: relative; z-index: 1; color: white;">
+        <!-- Contenido principal -->
+        <div style="z-index: 1; color: white;">
           <h1 style="font-size: 2.2em; margin-bottom: 15px; color: black;">API:Poke Api</h1>
           <img src="imagenes/poke.png" alt="Trivia Icon" style="width: 150px; margin: 0 auto 20px;" />
           <div style="
@@ -37,20 +37,24 @@ function mostrarusuario() {
             max-width: 400px;
             font-size: 1em;
           ">
-            <p>
-              Esta app usa una API que ofrece informaciocion de 1025 Pokemones
-            </p>
+            <p>Esta app usa una API que ofrece informaciocion de 1025 Pokemones</p>
           </div>
-  
-          <p style="font-size: 1em; color: black;">GitHub: 
-            <a href="https://github.com/Sanguzsua" target="_blank" style="color: black;">@Sanguzsua</a>
+          <p style="font-size: 1em; color: black;">
+            GitHub: <a href="https://github.com/Sanguzsua" target="_blank" style="color: black;">@Sanguzsua</a>
           </p>
-  
           <p style="font-size: 1em; color: black;">Versión de la app: <strong>V.1.0.0</strong></p>
-  
           <footer style="margin-top: 30px; font-size: 0.9em; color: black;">
             Hecho por <strong>Santiago Guzman Suarez</strong>
           </footer>
+        </div>
+  
+        <!-- Botones -->
+        <div style="z-index: 1; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; padding: 20px 0;">
+          <button style="background-color: blue; color: white;">Home</button>
+          <button style="background-color: blue; color: white;">Usuario</button>
+          <button style="background-color: blue; color: white;">Aleatorios</button>
+          <button style="background-color: blue; color: white;">Favoritos</button>
+          <button style="background-color: blue; color: white;">Capturados</button>
         </div>
       </div>
     `;
