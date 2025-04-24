@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokeapi</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- especifica la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- hace la página responsiva, ajustándose al tamaño de la pantalla -->
+    <title>Pokeapi</title> <!-- título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- enlaza el archivo CSS para los estilos -->
 </head>
 <body>
     <main id="app">
-        <!--contenedor dinamico-->
+        <!-- contenedor dinámico donde se cargará el contenido de la aplicación -->
     </main>
 
     <aside class="c-nav">
-        <button class="c-nav-item" onclick="General()">Home</button>
-        <button class="c-nav-item" onclick="mostrarusuario()">Usuario</button>
-        <button class="c-nav-item" onclick="mostraraleatorio()">Aleatorios</button>
-        <button class="c-nav-item" onclick="mostrarfavoritos()">Favoritos</button>
-        <button class="c-nav-item" onclick="mostrarcapturar()">Capturados</button>
+        <!-- barra lateral de navegación con botones para acceder a diferentes secciones -->
+        <button class="c-nav-item" onclick="General()">Home</button> <!-- botón para ir a la sección Home -->
+        <button class="c-nav-item" onclick="mostrarusuario()">Usuario</button> <!-- botón para ir a la sección Usuario -->
+        <button class="c-nav-item" onclick="mostraraleatorio()">Aleatorios</button> <!-- botón para ir a la sección Aleatorios -->
+        <button class="c-nav-item" onclick="mostrarfavoritos()">Favoritos</button> <!-- botón para ir a la sección Favoritos -->
+        <button class="c-nav-item" onclick="mostrarcapturar()">Capturados</button> <!-- botón para ir a la sección Capturados -->
     </aside>
 
-    <script src="js/api.js"></script>
-    <script src="js/lista.js"></script>
-    <script src="js/usuario.js"></script>
-    <script src="js/aleatorio.js"></script>
-    <script src="js/favoritos.js"></script>
-    <script src="js/Capturar.js"></script>
-    <script src="js/detalle.js"></script>
+    <!-- enlaza los scripts que contienen la lógica de las diferentes funciones de la aplicación -->
+    <script src="js/api.js"></script> <!-- script para la interacción con la API -->
+    <script src="js/lista.js"></script> <!-- script para la funcionalidad de la lista de pokémons -->
+    <script src="js/usuario.js"></script> <!-- script para mostrar la información del usuario -->
+    <script src="js/aleatorio.js"></script> <!-- script para la funcionalidad de pokémons aleatorios -->
+    <script src="js/favoritos.js"></script> <!-- script para la funcionalidad de los favoritos -->
+    <script src="js/Capturar.js"></script> <!-- script para la funcionalidad de los pokémons capturados -->
+    <script src="js/detalle.js"></script> <!-- script para mostrar los detalles de cada pokémon -->
 
-    <script>
-        document.addEventListener("DOMContentLoaded", General)
-    </script>
+    <script>document.addEventListener("DOMContentLoaded", General) </script><!-- ejecuta la función General cuando el contenido del DOM esté completamente cargado -->
 
 </body>
 </html>

@@ -1,51 +1,54 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-    
+/* Asegura que todos los elementos tengan un margen de 0 y utilicen el modelo de caja adecuado */
+* {
+    margin: 0; /* elimina el margen predeterminado de todos los elementos */
+    box-sizing: border-box; /* hace que el padding y el borde se incluyan en el tamaño total de los elementos */
 }
 
-button{
-    background-color: rgb(0, 60, 255);
-    color: rgb(255, 255, 255);
-    border: unset;
-    margin: 0;
-    transition: 0.5s;
-}
-/* lista */
-.c-lista{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-   
+/* Estilos para los botones */
+button {
+    background-color: rgb(0, 60, 255); /* color de fondo del botón */
+    color: rgb(255, 255, 255); /* color del texto (blanco) */
+    border: unset; /* elimina el borde predeterminado del botón */
+    margin: 0; /* elimina el margen */
+    transition: 0.5s; /* agrega una transición suave para los cambios de estilo */
 }
 
-.c-lista-pokemon{
-    background-color: rgb(173, 212, 247);
-    width: calc(50% - 5px);
-    padding: 10px;
-    text-align: center;
+/* Estilos para la lista de pokémons */
+.c-lista {
+    display: flex; /* muestra los elementos en fila */
+    gap: 10px; /* espacio entre los elementos */
+    flex-wrap: wrap; /* permite que los elementos se ajusten a la siguiente línea si no caben en una fila */
 }
 
-/* navegacion */
-.c-nav{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: rgb(240, 237, 237);
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px 15px;
-    gap: 10px;
+/* Estilos para cada tarjeta de pokémon en la lista */
+.c-lista-pokemon {
+    background-color: rgb(173, 212, 247); /* color de fondo de cada tarjeta */
+    width: calc(50% - 5px); /* establece el ancho de cada tarjeta como la mitad del contenedor menos un pequeño margen */
+    padding: 10px; /* espacio dentro de la tarjeta */
+    text-align: center; /* alinea el contenido de la tarjeta al centro */
 }
 
-.c-nav-item{
-    width: calc(25% - 7.5px);
-    background-color: rgb(0, 60, 255);
-}
-.c-nav-item:hover{
-    color: rgb(255, 255, 255);
+/* Estilos para la barra de navegación */
+.c-nav {
+    position: fixed; /* fija la barra de navegación en la parte inferior de la página */
+    bottom: 0; /* asegura que esté en la parte inferior */
+    left: 0; /* asegura que esté alineada a la izquierda */
+    background: rgb(240, 237, 237); /* color de fondo */
+    width: 100%; /* ocupa todo el ancho de la pantalla */
+    display: flex; /* organiza los botones en una fila */
+    flex-wrap: wrap; /* permite que los botones se ajusten si no caben en una sola línea */
+    justify-content: space-around; /* distribuye los botones uniformemente */
+    padding: 10px 15px; /* espacio dentro de la barra de navegación */
+    gap: 10px; /* espacio entre los botones */
 }
 
+/* Estilos para los elementos dentro de la barra de navegación */
+.c-nav-item {
+    width: calc(25% - 7.5px); /* establece el ancho de cada botón como un 25% del contenedor, menos un pequeño margen */
+    background-color: rgb(0, 60, 255); /* color de fondo del botón */
+}
 
+/* Efecto al pasar el cursor sobre un botón de la barra de navegación */
+.c-nav-item:hover {
+    color: rgb(255, 13, 13); /* cambia el color del texto a blanco cuando se pasa el cursor sobre el botón */
+}
